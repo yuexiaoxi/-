@@ -1,0 +1,23 @@
+查询一个网站真实ip地址
+1.使用 nslookup 查询A域名
+￼   如果 nslookup 曝出失败
+2.用 whois 查询DNS服务器
+￼   可以查询到dns服务器
+3.使用dig 命令继续查询:dig @dns服务器 URL
+￼
+若目标网站可能存在cdn（内容分发网络）
+1.则首先需要判断CDN是否存在
+  a.通过Ping命令判断
+  b.通过设置代理或利用在线ping网站来使用不同地区的ping服务器来测试目标。
+    例如:站长之家
+2.绕过CDN
+  a.如果目标没有使用CDN，可以直接利用ping获得IP地址。
+    或者利用在线网站：http://www.ip138.com/
+  b.如果目标使用CDN，需要绕过CDN来获取真实IP地址。
+    1、内部邮箱源  收集到内部邮箱服务器IP地址
+    2、网站phpinfo文件 phpinfo.php
+    3、分站IP地址，查询子域名  CDN很贵，很有可能分站就不再使用CDN。
+    4、国外访问  https://asm.ca.com/en/ping.php
+    5、查询域名解析记录  https://viewdns.info/
+3.CDN验证
+  利用IP地址对Web站点进行访问，如果正常表名是真实IP地址。否则不为真。
